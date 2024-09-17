@@ -1,11 +1,8 @@
+import { useUsers } from '@/hooks/use-users';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './ui/table';
 
 export function UsersList() {
-	const users = [{
-		id: 1,
-		name: 'Victor Badaró',
-		email: 'victor.badaro@fatec.sp.gov.br'
-	}];
+	const { users } = useUsers();
 
 	return (
 		<div className="border border-zinc-700 rounded-lg overflow-hidden">

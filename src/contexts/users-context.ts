@@ -6,11 +6,11 @@ export type User = {
 	email: string;
 }
 
-export type UserToBeUpdated = Omit<User, 'id'>;
+export type UserToBeAdded = Omit<User, 'id'>;
 
 interface UsersContext {
 	users: User[];
-	addUser: (userToBeUpdated: UserToBeUpdated) => void;
+	addUser: (userToBeAdded: UserToBeAdded) => void;
 }
 
 export const UsersContext = createContext<UsersContext>({} as UsersContext);

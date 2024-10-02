@@ -1,4 +1,4 @@
-import { User, UsersContext, UserToBeUpdated } from '@/contexts/users-context';
+import { User, UsersContext, UserToBeAdded } from '@/contexts/users-context';
 import { ReactNode, useState } from 'react';
 
 interface UsersProviderProps {
@@ -8,13 +8,13 @@ interface UsersProviderProps {
 export function UsersProvider({ children }: UsersProviderProps) {
 	const [users, setUsers] = useState<User[]>([]);
 
-	function addUser(user: UserToBeUpdated) {
+	function addUser(userToBeAdded: UserToBeAdded) {
 		setUsers((prev) => [
 			...prev,
 			{
 				id: prev.length + 1,
-				name: user.name,
-				email: user.email
+				name: userToBeAdded.name,
+				email: userToBeAdded.email
 			}
 		]);
 	}
